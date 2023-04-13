@@ -27,10 +27,11 @@ maxinf6000monnaie = x.select {|i, j| j == maxinf6000}.keys
 puts "Bonjour, quelle est votre question ?"
 
 def questions
-    puts "\n1 : Quelles sont la ou les monnaies les plus chère ?"
-    puts "2 : Quelles sont la ou les monnaies les moins chère ?"
-    puts "3 : Quelles sont les monnaies dont le cours est inférieur à 6000 ?"
-    puts "4 : Quelles sont la ou les monnaies les plus chères dont le cours est inférieur à 6000 ?"
+    puts "\n1 : Quelles sont les monnaies et leur cours dans la liste ?"
+    puts "2 : Quelles sont la ou les monnaies les plus chère ?"
+    puts "3 : Quelles sont la ou les monnaies les moins chère ?"
+    puts "4 : Quelles sont les monnaies dont le cours est inférieur à 6000 ?"
+    puts "5 : Quelles sont la ou les monnaies les plus chères dont le cours est inférieur à 6000 ?"
     puts "0 : Quitter la sélection."
 end
 
@@ -39,32 +40,36 @@ questions
 loop do
     choix = gets.chomp.to_i
 
-if choix > -1 && choix < 5 && choix.is_a?(Integer)
+if choix > -1 && choix < 6 && choix.is_a?(Integer)
     case choix
     when 0
         puts "Merci, et à bientôt."
 break
     when 1
-        puts "\nLa monnaie la plus chère est : #{monnaiechere} à #{montantmax}."
+        puts "\n #{x}"
         puts "\nAvez-vous une autre question ?"
         questions
     when 2
+        puts "\nLa monnaie la plus chère est : #{monnaiechere} à #{montantmax}."
+        puts "\nAvez-vous une autre question ?"
+        questions
+    when 3
         puts "\nLes monnaies les moins chères sont : #{monnaiepaschere} à #{montantmin}."
         puts "\nAvez-vous une autre question ?"
         questions
 
-    when 3
+    when 4
         puts "\nLes monnaies dont le cours est inférieur à 6000 : #{inf6000}."
         puts "\nAvez-vous une autre question ?"
         questions
 
-    when 4
+    when 5
         puts "\nLa monnaie la plus chère parmi celles dont le cours est inférieur à 6000 : #{maxinf6000monnaie} à #{maxinf6000}."
         puts "\nAvez-vous une autre question ?"
         questions
     end
 else
-    puts "Merci de rentrer un choix valide, de 0 à 4."
+    puts "Merci de rentrer un choix valide, de 0 à 5."
 end
 end
 
