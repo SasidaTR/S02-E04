@@ -12,7 +12,7 @@ def questions
     puts "9 : Quitter la sélection."
 end
 
-puts "Quelle est votre question ?\n"
+puts "Bonjour, quelle est votre question ?\n"
 
 questions
 
@@ -22,50 +22,50 @@ loop do
 if choix > 0 && choix < 10 && choix.is_a?(Integer)
     case choix
     when 9
-        puts "Merci, et à bientôt."
+        puts "\nMerci, et à bientôt."
 break
     when 1
-        puts "Nombre d'entité(s) : #{list.length}"
+        puts "\nNombre d'entité(s) : #{list.length}"
         puts "\nAvez-vous une autre question ?"
         questions
     when 2
-        puts "Entité la plus courte : #{list.min_by(&:length)}"
+        puts "\nEntité la plus courte : #{list.min_by(&:length)}"
         puts "\nAvez-vous une autre question ?"
         questions
 
     when 3
-        puts "Nombre d'entités avec 5 caractères : #{list.count{ |handle| handle =~ /^@.{5}$/ }}"
+        puts "\nNombre d'entités avec 5 caractères : #{list.count{ |handle| handle =~ /^@.{5}$/ }}"
         puts "\nAvez-vous une autre question ?"
         questions
 
     when 4
-        puts "Nombre d'entités commençant par une majuscule : #{list.count { |handle| handle =~ /^@[A-Z]/ }}"
+        puts "\nNombre d'entités commençant par une majuscule : #{list.count { |handle| handle =~ /^@[A-Z]/ }}"
         puts "\nAvez-vous une autre question ?"
         questions
 
     when 5
-        puts "Liste triée par ordre alphabétique : #{list.sort.join(', ')}"
+        puts "\nListe triée par ordre alphabétique : #{list.sort.join(', ')}"
         puts "\nAvez-vous une autre question ?"
         questions
 
     when 6
-        puts "Liste triée par nombre de caractères : #{list.sort_by{|handle| handle.length}}"
+        puts "\nListe triée par nombre de caractères : #{list.sort_by{|handle| handle.length}}"
         puts "\nAvez-vous une autre question ?"
         questions
 
     when 7
-        puts "Position de @epenser dans la liste : #{list.index('@epenser')}"
+        puts "\nPosition de @epenser dans la liste : #{list.index('@epenser')}"
         puts "\nAvez-vous une autre question ?"
         questions
 
     when 8
-        puts "Répartition des entités par taille : #{list.sort_by{|handle| handle.length}.group_by{|handle| handle.length-1}.transform_values(&:size)}"
+        puts "\nRépartition des entités par taille : #{list.sort_by{|handle| handle.length}.group_by{|handle| handle.length-1}.transform_values(&:size)}"
         puts "\nAvez-vous une autre question ?"
         questions
 
     end
 else
-    puts "Merci de rentrer un choix valide, de 1 à 8."
+    puts "\nMerci de rentrer un choix valide, de 1 à 8."
 end
 end
 
